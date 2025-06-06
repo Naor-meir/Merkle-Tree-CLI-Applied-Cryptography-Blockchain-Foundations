@@ -1,0 +1,2154 @@
+MERKLE TREE TEST OUTPUT LOG
+Test run started at: 2025-06-06 17:09:00
+============================================================
+
+
+############################################################
+# Starting Test: test_incremental_roots
+############################################################
+
+============================================================
+Test Execution #1
+Timestamp: 2025-06-06 17:09:00
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 apple
+  2: 2
+  3: 1 banana
+  4: 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b
+  2: 004e48bbd922653f4cb0b656f13dbaaf72974acea5d6d836ba240ddcc780a994
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_invalid_commands
+############################################################
+
+============================================================
+Test Execution #2
+Timestamp: 2025-06-06 17:09:01
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: invalid
+  2: 1
+  3: 3 5
+  4: 4 a b c
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+  2: 
+  3: 
+  4: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_long_input_handled
+############################################################
+
+============================================================
+Test Execution #3
+Timestamp: 2025-06-06 17:09:01
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  2: 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 1d1801f753ccd9fa57966c46f360585caf83337a394a5f238d4e4e7d6005788d
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_malformed_proof_items
+############################################################
+
+============================================================
+Test Execution #4
+Timestamp: 2025-06-06 17:09:01
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 3 0
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 1c44474038d459e40e4714afefa7bf8dae9f9834b22f5e8ec1dd434ecb62b512e
+----------------------------------------
+
+
+============================================================
+Test Execution #5
+Timestamp: 2025-06-06 17:09:01
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 4 t1 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 c44474038d459e40e4714afefa7bf8dae9f9834b22f5e8ec1dd434ecb62b512e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+============================================================
+Test Execution #6
+Timestamp: 2025-06-06 17:09:01
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 4 t1 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 2c44474038d459e40e4714afefa7bf8dae9f9834b22f5e8ec1dd434ecb62b512e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+============================================================
+Test Execution #7
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 4 t1 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 1c44474038d459e40e4714afefa7bf
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+============================================================
+Test Execution #8
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 4 t1 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 1c44474038d459e40e4714afefa7bf8dae9f9834b22f5e8ec1dd434ecb62b512e00
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+============================================================
+Test Execution #9
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 t1
+  2: 1 t2
+  3: 4 t1 3269f5f93615478d3d2b4a32023126ff1bf47ebc54c2c96651d2ac72e1c5e235 1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_multiple_leaves_root
+############################################################
+
+============================================================
+Test Execution #10
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 1 b
+  3: 1 c
+  4: 1 d
+  5: 1 e
+  6: 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: dea979f026a014fcb2300d6300e73ae1ccfb0dd238835d33895286d610eb7c4f
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_multiple_spaces_invalid
+############################################################
+
+============================================================
+Test Execution #11
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 1 b
+  3: 1 c
+  4: 1  data
+  5: 1   data
+  6: 3  0
+  7: 3    1
+  8: 4  a b c
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+  2: 
+  3: 
+  4: 
+  5: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_proof_and_verify_failure
+############################################################
+
+============================================================
+Test Execution #12
+Timestamp: 2025-06-06 17:09:02
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 k
+  2: 1 l
+  3: 1 m
+  4: 3 0
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: a02dbf4e637262add6af25e5cbebd29a5c9bc891bd8450a2bf740652a3c89cf9 1acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0 162c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a
+----------------------------------------
+
+
+============================================================
+Test Execution #13
+Timestamp: 2025-06-06 17:09:03
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 k
+  2: 1 l
+  3: 1 m
+  4: 4 k a02dbf4e637262add6af25e5cbebd29a5c9bc891bd8450a2bf740652a3c89cf9 0acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0 162c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: False
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_proof_and_verify_success
+############################################################
+
+============================================================
+Test Execution #14
+Timestamp: 2025-06-06 17:09:03
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 x
+  2: 1 y
+  3: 1 z
+  4: 3 1
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 6d1aea673cf4667b940d382a88f42163b8498a4a7243308307c325cc98c2c600 02d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881 1594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06
+----------------------------------------
+
+
+============================================================
+Test Execution #15
+Timestamp: 2025-06-06 17:09:03
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 x
+  2: 1 y
+  3: 1 z
+  4: 4 y 6d1aea673cf4667b940d382a88f42163b8498a4a7243308307c325cc98c2c600 02d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881 1594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_proof_invalid_root
+############################################################
+
+============================================================
+Test Execution #16
+Timestamp: 2025-06-06 17:09:03
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 red
+  2: 1 green
+  3: 1 blue
+  4: 3 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 54870bca627346b47cc855bb38fd4ee34d98d07c11425d1dc15b4750395eb9ca 0c6973553cb8bc7db303f5f671525360f245e921cfd1470be2e1b5a024f8f3626
+----------------------------------------
+
+
+============================================================
+Test Execution #17
+Timestamp: 2025-06-06 17:09:03
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 red
+  2: 1 green
+  3: 1 blue
+  4: 4 blue 0000000000000000000000000000000000000000000000000000000000000000 0c6973553cb8bc7db303f5f671525360f245e921cfd1470be2e1b5a024f8f3626
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: False
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_proof_length_power_of_two
+############################################################
+
+============================================================
+Test Execution #18
+Timestamp: 2025-06-06 17:09:04
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 p0
+  2: 1 p1
+  3: 3 1
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 87138292382872de880189d71566c8a35166a0e99132b580740a5ed3c2934fe1 0169b5b823c62b64ca7e5f8456a13c8d5d06f4ece522a58bc2b8a784dcf3609b0
+----------------------------------------
+
+
+============================================================
+Test Execution #19
+Timestamp: 2025-06-06 17:09:04
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 p0
+  2: 1 p1
+  3: 1 p2
+  4: 1 p3
+  5: 3 3
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 4b47b2b74dd7cb719312e3a209569ff006e207d92990c5023ac07ac5096d8410 03946ca64ff78d93ca61090a437cbb6b3d2ca0d488f5f9ccf3059608368b27693 087138292382872de880189d71566c8a35166a0e99132b580740a5ed3c2934fe1
+----------------------------------------
+
+
+============================================================
+Test Execution #20
+Timestamp: 2025-06-06 17:09:04
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 p0
+  2: 1 p1
+  3: 1 p2
+  4: 1 p3
+  5: 1 p4
+  6: 1 p5
+  7: 1 p6
+  8: 1 p7
+  9: 3 7
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: f270d50aa0fa7bf3e723c4ef61c0f065b096ee659fbfbe44fdf16a3a4d53f8b8 07d087a2e212c110e851c7b6fdc2853a41e7db1690beef7a9c11b3a26ee77e853 09584cb93fcc2851ff6b658acfed083de18fbbe5c00ca85fa04aa234cc3d5a225 04b47b2b74dd7cb719312e3a209569ff006e207d92990c5023ac07ac5096d8410
+----------------------------------------
+
+
+============================================================
+Test Execution #21
+Timestamp: 2025-06-06 17:09:04
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 p0
+  2: 1 p1
+  3: 1 p2
+  4: 1 p3
+  5: 1 p4
+  6: 1 p5
+  7: 1 p6
+  8: 1 p7
+  9: 1 p8
+ 10: 1 p9
+ 11: 1 p10
+ 12: 1 p11
+ 13: 1 p12
+ 14: 1 p13
+ 15: 1 p14
+ 16: 1 p15
+ 17: 3 15
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: ecf0e26e23888e2915676e4face2d1a3fb274777bba54fd60bc00ab807ce72c6 0b11e9a1a5e0b8e5337cb811eebf06f53697da186f85f4b862056d0b8ba88ae70 0fc73f8e88dd0ad9eeeffbd88d558722466b757b355f745a6945449087452e612 00e1d3cc6cec33a504d2e47e01bc02cc5e886dd7882014d42f60ae43aacd2f1b7 0f270d50aa0fa7bf3e723c4ef61c0f065b096ee659fbfbe44fdf16a3a4d53f8b8
+----------------------------------------
+
+
+============================================================
+Test Execution #22
+Timestamp: 2025-06-06 17:09:04
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 p0
+  2: 1 p1
+  3: 1 p2
+  4: 1 p3
+  5: 1 p4
+  6: 1 p5
+  7: 1 p6
+  8: 1 p7
+  9: 1 p8
+ 10: 1 p9
+ 11: 1 p10
+ 12: 1 p11
+ 13: 1 p12
+ 14: 1 p13
+ 15: 1 p14
+ 16: 1 p15
+ 17: 1 p16
+ 18: 1 p17
+ 19: 1 p18
+ 20: 1 p19
+ 21: 1 p20
+ 22: 1 p21
+ 23: 1 p22
+ 24: 1 p23
+ 25: 1 p24
+ 26: 1 p25
+ 27: 1 p26
+ 28: 1 p27
+ 29: 1 p28
+ 30: 1 p29
+ 31: 1 p30
+ 32: 1 p31
+ 33: 3 31
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 7c922b79bcbfb113ea2271256b7e81a8b78ce274c552f9e9fc10feffbd65b451 0e9266ccd10a1aeb5c92fa19ee74155b21c32bb6d17c20830c702a0ed0bc04902 0a33e96aee94c81320173c440f74c0ffeba187b2cf2a38bb59b8521c7f085386f 0bd1a8a7a934beaf7ea91f75b5094770b6880d8f2701d4c1daf710b7ed47ef39d 048517a9530d06bef265b73cd1586d50babb016d825b2a8bedb60879570ae4e2d 0ecf0e26e23888e2915676e4face2d1a3fb274777bba54fd60bc00ab807ce72c6
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_random_leaf_proofs_large_tree
+############################################################
+
+============================================================
+Test Execution #23
+Timestamp: 2025-06-06 17:09:05
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 3 32
+ 52: 3 15
+ 53: 3 39
+ 54: 3 25
+ 55: 3 17
+ 56: 3 30
+ 57: 3 21
+ 58: 3 47
+ 59: 3 45
+ 60: 3 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 1c6b907105133feaf1fbac4d581aa87c3fffc251bf3bb94bb5d3f5aeb98bd4f72 1d8dbdde99b50c789a6bd51b362613ed57839bd3abdc6e2a4948fdd6ce8824bca 13b5011bc006547359931474aa7ed8dc3adc92ead4ca1e5421eb48fdd6f6b4cc1 1b76ca6778d27d55505692d8cbc66ba5cb0ae0126f63f0b497bd6fa37ec9aa637 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+  2: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0f20142d4ec3dad423903d7ce640ba822ee2d8703290337a63652405087e9105e 0a2358b21ebe7975e3bfd90e085a37370933ba59ef201f7d7d71b498d814baa33 013954230cf87ecf8826e2dea71114ea727ab710c09a41a0355131a44a64496da 0ff13418a989791d88c4c8f1607d327f207f96ddec44f4319eab172de0bf89a7d 1c7abe210f43ca2576d008e039074cf611d6a795940a0f277e4863d52240fb186 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+  3: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0115cd1c46c1938681e4ab4a35b1239f653a4f4c0bc133a0759cf0012e7b50bec 0ed7b63b1d1abba20b28307f6044032a4be892b4929ec29ad94c8693bc53d77e0 017f60cb0d528f4002d700e4ee07fef33c0b18c99ab5aee4dcd0f1864d822c0fd 1b76ca6778d27d55505692d8cbc66ba5cb0ae0126f63f0b497bd6fa37ec9aa637 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+  4: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 046c1c8fec02cb1d2625278a6d1deebec0e74fab9c1f0106c89734c0a76262420 1a55393676b2aa021791f8b3632605d3ed81c475e8f1273f2f56dd7e7ef4fa10b 172d58291ee174175acf8c233cfa35b683dd86e510c17a04d7bde359fb266f607 0300b2da75b175eddb7290a009adbdbdec503dd886457058d320d62758736593e 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+  5: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 028319192ba29d79ce397bad3170d37065dc7945b502b812e38f444d8024b890b 17d1205e43d055c30bec5c0f2a90982c20470c3b1d9a95254bcf809666ccb1766 1ffcefc60521e1b0970456e1216f551875cc81ca4a647509e2cb19d326af13b9d 151dfcbea4352e096aa5acdf48768473b922771f4a182df9a6513a73cb2166b46 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+  6: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 109a51d7c2b8047c3c92f4afa29a305f030b90d70a4d309a90119815682c87469 04f5e6ca1fd45e5539b3bb43cbcaff387cb37d54adf145cb26974b84b3bdbcbb0 03198104cc1e5651ebdc4cf86da6b7be0eca50f02ebf45a5a5a54fb073ef7607e 0300b2da75b175eddb7290a009adbdbdec503dd886457058d320d62758736593e 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+  7: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 090d03824ff26903d9f53294e1e3a17a72739de624588b5924796f2ef8d495afd 12cf6dab3b893f65996e29fbe1632f77a6c576dd80c52176e96727d2696e95614 0b1731d733aea60d260d5dd152890c6698d9825640344b4f60ea02571d3c56c7d 151dfcbea4352e096aa5acdf48768473b922771f4a182df9a6513a73cb2166b46 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+  8: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 09b8eade74225394ef37f7bba206fe536ea86bc740cb07f238bd2ec5d6cc79ba6 05e5406e94e11e53da6fa36a50f0cb666df3cf600754499fa823909ec4d6cdcd0 0d53eea9aff816a9db260d8981ccac62c6c614096da9842140fd0505504e6147a 09a9609993b3dcbfdf915737c868ce7a91604b120cc433b6f8bdc5d9cda20893d 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+  9: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0d1059460563be66a71040f48419af2759b9b07c1463432ecf13ed0917bdb91a1 14a513c2187c68bd69e6f6158f285767b1aaf08ebe1560f808b8da29c1b8f8367 0d53eea9aff816a9db260d8981ccac62c6c614096da9842140fd0505504e6147a 09a9609993b3dcbfdf915737c868ce7a91604b120cc433b6f8bdc5d9cda20893d 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+ 10: 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 1bac8d4414984861d5199b7a97699c728bee36c4084299b2ca905434cf65d8944 0774d5cef40ae5beb94a3c107b37e5a8ed254908336bd83889301d2275b3f09eb 1448dd9c1137eaa2136d751e68ba6d461c9870a5d2d2d5b016682aa78b9cd9e21 18fc687ebbb0c84ebba2a4e703012e9525251baded31caceb6eb3e722c7bbbf54 1c7abe210f43ca2576d008e039074cf611d6a795940a0f277e4863d52240fb186 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+
+============================================================
+Test Execution #24
+Timestamp: 2025-06-06 17:09:05
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val32 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 1c6b907105133feaf1fbac4d581aa87c3fffc251bf3bb94bb5d3f5aeb98bd4f72 1d8dbdde99b50c789a6bd51b362613ed57839bd3abdc6e2a4948fdd6ce8824bca 13b5011bc006547359931474aa7ed8dc3adc92ead4ca1e5421eb48fdd6f6b4cc1 1b76ca6778d27d55505692d8cbc66ba5cb0ae0126f63f0b497bd6fa37ec9aa637 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #25
+Timestamp: 2025-06-06 17:09:05
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val15 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0f20142d4ec3dad423903d7ce640ba822ee2d8703290337a63652405087e9105e 0a2358b21ebe7975e3bfd90e085a37370933ba59ef201f7d7d71b498d814baa33 013954230cf87ecf8826e2dea71114ea727ab710c09a41a0355131a44a64496da 0ff13418a989791d88c4c8f1607d327f207f96ddec44f4319eab172de0bf89a7d 1c7abe210f43ca2576d008e039074cf611d6a795940a0f277e4863d52240fb186 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #26
+Timestamp: 2025-06-06 17:09:05
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val39 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0115cd1c46c1938681e4ab4a35b1239f653a4f4c0bc133a0759cf0012e7b50bec 0ed7b63b1d1abba20b28307f6044032a4be892b4929ec29ad94c8693bc53d77e0 017f60cb0d528f4002d700e4ee07fef33c0b18c99ab5aee4dcd0f1864d822c0fd 1b76ca6778d27d55505692d8cbc66ba5cb0ae0126f63f0b497bd6fa37ec9aa637 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #27
+Timestamp: 2025-06-06 17:09:05
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val25 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 046c1c8fec02cb1d2625278a6d1deebec0e74fab9c1f0106c89734c0a76262420 1a55393676b2aa021791f8b3632605d3ed81c475e8f1273f2f56dd7e7ef4fa10b 172d58291ee174175acf8c233cfa35b683dd86e510c17a04d7bde359fb266f607 0300b2da75b175eddb7290a009adbdbdec503dd886457058d320d62758736593e 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #28
+Timestamp: 2025-06-06 17:09:06
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val17 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 028319192ba29d79ce397bad3170d37065dc7945b502b812e38f444d8024b890b 17d1205e43d055c30bec5c0f2a90982c20470c3b1d9a95254bcf809666ccb1766 1ffcefc60521e1b0970456e1216f551875cc81ca4a647509e2cb19d326af13b9d 151dfcbea4352e096aa5acdf48768473b922771f4a182df9a6513a73cb2166b46 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #29
+Timestamp: 2025-06-06 17:09:06
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val30 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 109a51d7c2b8047c3c92f4afa29a305f030b90d70a4d309a90119815682c87469 04f5e6ca1fd45e5539b3bb43cbcaff387cb37d54adf145cb26974b84b3bdbcbb0 03198104cc1e5651ebdc4cf86da6b7be0eca50f02ebf45a5a5a54fb073ef7607e 0300b2da75b175eddb7290a009adbdbdec503dd886457058d320d62758736593e 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #30
+Timestamp: 2025-06-06 17:09:06
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val21 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 090d03824ff26903d9f53294e1e3a17a72739de624588b5924796f2ef8d495afd 12cf6dab3b893f65996e29fbe1632f77a6c576dd80c52176e96727d2696e95614 0b1731d733aea60d260d5dd152890c6698d9825640344b4f60ea02571d3c56c7d 151dfcbea4352e096aa5acdf48768473b922771f4a182df9a6513a73cb2166b46 03984904ebe72ede0f2f6da1097b83ad8540f6a20fb780e7b640eff8a4103bbaf 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #31
+Timestamp: 2025-06-06 17:09:07
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val47 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 09b8eade74225394ef37f7bba206fe536ea86bc740cb07f238bd2ec5d6cc79ba6 05e5406e94e11e53da6fa36a50f0cb666df3cf600754499fa823909ec4d6cdcd0 0d53eea9aff816a9db260d8981ccac62c6c614096da9842140fd0505504e6147a 09a9609993b3dcbfdf915737c868ce7a91604b120cc433b6f8bdc5d9cda20893d 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #32
+Timestamp: 2025-06-06 17:09:07
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val45 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 0d1059460563be66a71040f48419af2759b9b07c1463432ecf13ed0917bdb91a1 14a513c2187c68bd69e6f6158f285767b1aaf08ebe1560f808b8da29c1b8f8367 0d53eea9aff816a9db260d8981ccac62c6c614096da9842140fd0505504e6147a 09a9609993b3dcbfdf915737c868ce7a91604b120cc433b6f8bdc5d9cda20893d 10d0bed227c54bef4fcd52dba6de44e49d5905d3c33b7d8da896f16479c21f800 09dc81a04ce902cc161b6e0adc265c3c9db35481ac67823f36667d4a4e841a73e
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #33
+Timestamp: 2025-06-06 17:09:07
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 val0
+  2: 1 val1
+  3: 1 val2
+  4: 1 val3
+  5: 1 val4
+  6: 1 val5
+  7: 1 val6
+  8: 1 val7
+  9: 1 val8
+ 10: 1 val9
+ 11: 1 val10
+ 12: 1 val11
+ 13: 1 val12
+ 14: 1 val13
+ 15: 1 val14
+ 16: 1 val15
+ 17: 1 val16
+ 18: 1 val17
+ 19: 1 val18
+ 20: 1 val19
+ 21: 1 val20
+ 22: 1 val21
+ 23: 1 val22
+ 24: 1 val23
+ 25: 1 val24
+ 26: 1 val25
+ 27: 1 val26
+ 28: 1 val27
+ 29: 1 val28
+ 30: 1 val29
+ 31: 1 val30
+ 32: 1 val31
+ 33: 1 val32
+ 34: 1 val33
+ 35: 1 val34
+ 36: 1 val35
+ 37: 1 val36
+ 38: 1 val37
+ 39: 1 val38
+ 40: 1 val39
+ 41: 1 val40
+ 42: 1 val41
+ 43: 1 val42
+ 44: 1 val43
+ 45: 1 val44
+ 46: 1 val45
+ 47: 1 val46
+ 48: 1 val47
+ 49: 1 val48
+ 50: 1 val49
+ 51: 4 val2 7e085d45f4f7b8da8618b063e574940aa4690215fd01a468c0146d94f01894c4 1bac8d4414984861d5199b7a97699c728bee36c4084299b2ca905434cf65d8944 0774d5cef40ae5beb94a3c107b37e5a8ed254908336bd83889301d2275b3f09eb 1448dd9c1137eaa2136d751e68ba6d461c9870a5d2d2d5b016682aa78b9cd9e21 18fc687ebbb0c84ebba2a4e703012e9525251baded31caceb6eb3e722c7bbbf54 1c7abe210f43ca2576d008e039074cf611d6a795940a0f277e4863d52240fb186 1ccdf8e09d6388c2899eba0faf5e07993b69eb186a9bb8be8099cffc2e688544f
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_rsa_sign_and_verify
+############################################################
+
+============================================================
+Test Execution #34
+Timestamp: 2025-06-06 17:09:07
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 5
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: -----BEGIN RSA PRIVATE KEY-----
+  2: MIIEowIBAAKCAQEApAygPXfJADhSiX1TN1Q/3l0Ym91CFMvBiryjq4+sNguYStn1
+  3: UPlMnGdTlRVrfFgKGUUUhaigBmEAqJUQcVekVTaH6hDhvVbVcSt1MMWJl2ZKDV3L
+  4: 5lUsBbNr/vRXwnALrz8pmaS+nGFKynrBFE7l0gUDntcAIaXXS+CWJM71bQP4pCOZ
+  5: qYSuhG2u/gnYOLTlH/JX9aPMHh8K1lwaPqI/Wfcg4rX+5Cuzhw+rI/E1GSMO9Yad
+  6: 3hwZtfQJ/BRfz3tYItrkwkusH8G09AgKt/m2wVAmPcMpLxiLXtaqbFrp4fyfXgWn
+  7: KsDswkdPjJdguPeRkySuecPhL37xEVLLNE8DcQIDAQABAoIBAB9rvatYTJrqrsBf
+  8: zTcNP3hvO13rKJOEHUtd6zlaeOEXInG/wnFido6Eaello2M7F6AUb6RUEmZ2YOJp
+  9: Pq9+2l5p5elql1olDhexe64+P6bMdEWQIBQ7XwWugnJgSYjX3h0QS37+o3WfWuxi
+ 10: S6YAoJsz06gyRPes5IpHd2qQa0iYShik5zvTJlbn7Hx2qnjiyMQ/E6N0IfHZ2Ynu
+ 11: nf2y28+4htGrpFLxXN84aw3CDVGrSYik5IpyUwCiub+u/91zctJ6t0caoFsmaBHU
+ 12: r189dVs6d8yAlPS+0KlFXK7e7CMwJyP4vCrM70oabsQ8b1exP7E8LFJQYz3nV+jd
+ 13: M9k5y/MCgYEA0pLJCZ5eSnIKUMxtWkm/HOZBZb3HDCYuDAQ/qEkouqVhM579bwv7
+ 14: 2f/+oetyGqqDe5C3UHqN66lqBb84/fGDXLLRMz+wfKNTbmmuHAdx8H2O0BNRJHjS
+ 15: BI9ma4EhHxRv6Eb8HFTHRMJCZE37/4AGetGNLVl3e5hDZCjUALHN9/cCgYEAx3B7
+ 16: sh4riYEnmCWI5O8bma9Rmt5dzBKpg/Wf6zo3habx9Jo8C1nUd2ih3GFQSVWok2KO
+ 17: xVTQIt+quz+LQH4js7uMEbbG4ZWPul2CVvJtjjo22SYqPcoC/h2O+yItGLeerQh1
+ 18: NiCQwZBIxggZVWlYiqMgGsRoTiwPALaWiTLHldcCgYBjQEB1wimbWUk3cEOSrPPh
+ 19: gT4N4HdzaIOHsnD2txT1dIHuPOAjeTiKNjkkxL8RhpFWqo1c54cBLucEMm+AcleC
+ 20: V953E2vyM2Fdx34DRBcWTXgE5zX1xOTotVaHEWQ1LALbLqoiCGusIwv8Dy3Z7dQg
+ 21: C6lJWMQSg2AwU3YppaT5XQKBgQC8vJISqcKByhvyO/Mk07LG6cbMTItvSGnrW1MP
+ 22: hHRuouJunFceVtBegEJNEDqua8WwVKDP1cdyeUBVG3loevbGbEHNsa7cZHEz6LIk
+ 23: Hh/XbPfi398xwi661LYuqtUKgxpCnbJumrrisuxrm9Z9ocgMyvri2ePrtn4sKp6j
+ 24: D88Y2QKBgFj1bzDStPCrH8IqeJXZhSllmEaKr/YN2pVz9FnpQ3wI0VdMzeddf+vL
+ 25: DwxLLiJTjjpfwTi51g4RievbsN9VyTMgxDX5gYyl9Hafjzp1q+ZvgtWOpCMOw23i
+ 26: pWG15NGuCwREcgq9CcAyURk5tP1Sf3H8lhIHgS7wEoWlblMULWBP
+ 27: -----END RSA PRIVATE KEY-----
+ 28: 
+ 29: -----BEGIN PUBLIC KEY-----
+ 30: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApAygPXfJADhSiX1TN1Q/
+ 31: 3l0Ym91CFMvBiryjq4+sNguYStn1UPlMnGdTlRVrfFgKGUUUhaigBmEAqJUQcVek
+ 32: VTaH6hDhvVbVcSt1MMWJl2ZKDV3L5lUsBbNr/vRXwnALrz8pmaS+nGFKynrBFE7l
+ 33: 0gUDntcAIaXXS+CWJM71bQP4pCOZqYSuhG2u/gnYOLTlH/JX9aPMHh8K1lwaPqI/
+ 34: Wfcg4rX+5Cuzhw+rI/E1GSMO9Yad3hwZtfQJ/BRfz3tYItrkwkusH8G09AgKt/m2
+ 35: wVAmPcMpLxiLXtaqbFrp4fyfXgWnKsDswkdPjJdguPeRkySuecPhL37xEVLLNE8D
+ 36: cQIDAQAB
+ 37: -----END PUBLIC KEY-----
+ 38: 
+----------------------------------------
+
+
+============================================================
+Test Execution #35
+Timestamp: 2025-06-06 17:09:08
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 foo
+  2: 1 bar
+  3: 6 -----BEGIN RSA PRIVATE KEY-----
+  4: MIIEowIBAAKCAQEApAygPXfJADhSiX1TN1Q/3l0Ym91CFMvBiryjq4+sNguYStn1
+  5: UPlMnGdTlRVrfFgKGUUUhaigBmEAqJUQcVekVTaH6hDhvVbVcSt1MMWJl2ZKDV3L
+  6: 5lUsBbNr/vRXwnALrz8pmaS+nGFKynrBFE7l0gUDntcAIaXXS+CWJM71bQP4pCOZ
+  7: qYSuhG2u/gnYOLTlH/JX9aPMHh8K1lwaPqI/Wfcg4rX+5Cuzhw+rI/E1GSMO9Yad
+  8: 3hwZtfQJ/BRfz3tYItrkwkusH8G09AgKt/m2wVAmPcMpLxiLXtaqbFrp4fyfXgWn
+  9: KsDswkdPjJdguPeRkySuecPhL37xEVLLNE8DcQIDAQABAoIBAB9rvatYTJrqrsBf
+ 10: zTcNP3hvO13rKJOEHUtd6zlaeOEXInG/wnFido6Eaello2M7F6AUb6RUEmZ2YOJp
+ 11: Pq9+2l5p5elql1olDhexe64+P6bMdEWQIBQ7XwWugnJgSYjX3h0QS37+o3WfWuxi
+ 12: S6YAoJsz06gyRPes5IpHd2qQa0iYShik5zvTJlbn7Hx2qnjiyMQ/E6N0IfHZ2Ynu
+ 13: nf2y28+4htGrpFLxXN84aw3CDVGrSYik5IpyUwCiub+u/91zctJ6t0caoFsmaBHU
+ 14: r189dVs6d8yAlPS+0KlFXK7e7CMwJyP4vCrM70oabsQ8b1exP7E8LFJQYz3nV+jd
+ 15: M9k5y/MCgYEA0pLJCZ5eSnIKUMxtWkm/HOZBZb3HDCYuDAQ/qEkouqVhM579bwv7
+ 16: 2f/+oetyGqqDe5C3UHqN66lqBb84/fGDXLLRMz+wfKNTbmmuHAdx8H2O0BNRJHjS
+ 17: BI9ma4EhHxRv6Eb8HFTHRMJCZE37/4AGetGNLVl3e5hDZCjUALHN9/cCgYEAx3B7
+ 18: sh4riYEnmCWI5O8bma9Rmt5dzBKpg/Wf6zo3habx9Jo8C1nUd2ih3GFQSVWok2KO
+ 19: xVTQIt+quz+LQH4js7uMEbbG4ZWPul2CVvJtjjo22SYqPcoC/h2O+yItGLeerQh1
+ 20: NiCQwZBIxggZVWlYiqMgGsRoTiwPALaWiTLHldcCgYBjQEB1wimbWUk3cEOSrPPh
+ 21: gT4N4HdzaIOHsnD2txT1dIHuPOAjeTiKNjkkxL8RhpFWqo1c54cBLucEMm+AcleC
+ 22: V953E2vyM2Fdx34DRBcWTXgE5zX1xOTotVaHEWQ1LALbLqoiCGusIwv8Dy3Z7dQg
+ 23: C6lJWMQSg2AwU3YppaT5XQKBgQC8vJISqcKByhvyO/Mk07LG6cbMTItvSGnrW1MP
+ 24: hHRuouJunFceVtBegEJNEDqua8WwVKDP1cdyeUBVG3loevbGbEHNsa7cZHEz6LIk
+ 25: Hh/XbPfi398xwi661LYuqtUKgxpCnbJumrrisuxrm9Z9ocgMyvri2ePrtn4sKp6j
+ 26: D88Y2QKBgFj1bzDStPCrH8IqeJXZhSllmEaKr/YN2pVz9FnpQ3wI0VdMzeddf+vL
+ 27: DwxLLiJTjjpfwTi51g4RievbsN9VyTMgxDX5gYyl9Hafjzp1q+ZvgtWOpCMOw23i
+ 28: pWG15NGuCwREcgq9CcAyURk5tP1Sf3H8lhIHgS7wEoWlblMULWBP
+ 29: -----END RSA PRIVATE KEY-----
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: NRGgKXkAvBYNPP1NHbAukhW3D4kPHBQ9OCncuGG1UPcbVNMV2CjUOmdB5l0itxfMXCNRJTxznG2QZ3FF1V505AUuQ+rE2L0KMo7tJEi9Dopq9rvV6DVvzE8a11mBc4UyJQPdUny5gFppzlHa0xW5k2zW1zyg0x82CianYQ7+WZNt1YcOUupPT7KBWLPz3QWD0QVMWTPLsyYHMz1LPv6O97o3FZ/Cm4qgsmFzoTz+h2XmdcM/UyWu4hfM1U9jeXFwgMG34KqINw1Ab+IKYwzNFpZ6vTW3AogsPskGWeiZFsZgnr7hCXbVEfID4IIRHkZxOsDO6CcOa0JrneCbQqqnRA==
+----------------------------------------
+
+
+============================================================
+Test Execution #36
+Timestamp: 2025-06-06 17:09:08
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 foo
+  2: 1 bar
+  3: 7 -----BEGIN PUBLIC KEY-----
+  4: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApAygPXfJADhSiX1TN1Q/
+  5: 3l0Ym91CFMvBiryjq4+sNguYStn1UPlMnGdTlRVrfFgKGUUUhaigBmEAqJUQcVek
+  6: VTaH6hDhvVbVcSt1MMWJl2ZKDV3L5lUsBbNr/vRXwnALrz8pmaS+nGFKynrBFE7l
+  7: 0gUDntcAIaXXS+CWJM71bQP4pCOZqYSuhG2u/gnYOLTlH/JX9aPMHh8K1lwaPqI/
+  8: Wfcg4rX+5Cuzhw+rI/E1GSMO9Yad3hwZtfQJ/BRfz3tYItrkwkusH8G09AgKt/m2
+  9: wVAmPcMpLxiLXtaqbFrp4fyfXgWnKsDswkdPjJdguPeRkySuecPhL37xEVLLNE8D
+ 10: cQIDAQAB
+ 11: -----END PUBLIC KEY-----
+ 12: 
+ 13: NRGgKXkAvBYNPP1NHbAukhW3D4kPHBQ9OCncuGG1UPcbVNMV2CjUOmdB5l0itxfMXCNRJTxznG2QZ3FF1V505AUuQ+rE2L0KMo7tJEi9Dopq9rvV6DVvzE8a11mBc4UyJQPdUny5gFppzlHa0xW5k2zW1zyg0x82CianYQ7+WZNt1YcOUupPT7KBWLPz3QWD0QVMWTPLsyYHMz1LPv6O97o3FZ/Cm4qgsmFzoTz+h2XmdcM/UyWu4hfM1U9jeXFwgMG34KqINw1Ab+IKYwzNFpZ6vTW3AogsPskGWeiZFsZgnr7hCXbVEfID4IIRHkZxOsDO6CcOa0JrneCbQqqnRA== ec321de56af3b66fb49e89cfe346562388af387db689165d6f662a3950286a57
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_sign_invalid_key_prefix
+############################################################
+
+============================================================
+Test Execution #37
+Timestamp: 2025-06-06 17:09:08
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 test1
+  2: 1 test2
+  3: 6 -----BEGIN INVALID KEY-----
+  4: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC
+  5: -----END RSA PRIVATE KEY-----
+  6: 
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+  2: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_sign_valid_markers_invalid_content
+############################################################
+
+============================================================
+Test Execution #38
+Timestamp: 2025-06-06 17:09:09
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 test1
+  2: 1 test2
+  3: 6 -----BEGIN RSA PRIVATE KEY-----
+  4: This is not valid key data
+  5: Just some random text
+  6: -----END RSA PRIVATE KEY-----
+  7: 
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+  2: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_signature_invalid_after_tree_change
+############################################################
+
+============================================================
+Test Execution #39
+Timestamp: 2025-06-06 17:09:09
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 5
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: -----BEGIN RSA PRIVATE KEY-----
+  2: MIIEpAIBAAKCAQEAr/4+4xh0g5Jd9IEwcCeZHyyBZVkAxbzYBhGSXs6e/Sp30w7e
+  3: 0AL1shpA3xNVHCPC+rLgCZP2CVdRGULQnimuZ9cmVmDtXaWHoKqbRWYK3RgJqhH/
+  4: lgqFV6uU5x9rTXtCKm09mTPtDfL1gx1SEna/aAIOJAQirY1QleCcK8UeF/fRYd4y
+  5: uenuGMPzwWnxfZw50XUwMo95wi1n0HcMKQOWu8IJES4rtiV3OcGlbTZDXUpVu1Ga
+  6: Sq+O72AT8dXjIXfh8QgAzh5B2cc9wbxXb6Md0rV4eSoWxO1W63Wc0C2Xa5U4HQDN
+  7: rNayC0IQvxeCkEPitbh0ErWNldsDmRJsK9cZdwIDAQABAoIBAAx0kRfPuG3tXcKQ
+  8: TWYf707M/rVg/f8rP8X3grqR+J+Qh11uYnzUkMs+NL7KO/jwsPu+zWtFckwJRsnj
+  9: uCb8FTCagfHqtzHW+rPMueNzTCvcknvbp+aDBRqGH/+Bcj3QDjKO0Pq25D0wp4kp
+ 10: eeWo9h/oG/8W3ytq4mamYvcYDWqttwdCBcV6och7ZARbnBiNNtT/JBJSru0ZBM4y
+ 11: jFQbFwgyd5FhEG5NGJSeWRXUKwEqCB/g0/nDbErFYcTOBiz8H6GmJzgK105X+YGw
+ 12: 16c15aWQCCAU6B3jF2nJGeYqOZWSQjCnoGnX05/ICQ+W9lUqNRenPLCTZ/Z/tydR
+ 13: Jkk0JvUCgYEA2MXXpRYwVTmDgd2Gyw79Z8TP9DzkVQz/CFZHW0FxHjmV/BP6QT0W
+ 14: d2KRysVvIGKfcxnYIeS7vwXA7Pvg29bwJkcAZlrxPyBUuNor7Ef5KpDXC86qz9RM
+ 15: kIm2TjoWxoAL253e6tSmjf9qDPjPFDmL1Ey9lW3AiW0xqybwVTE3CxMCgYEAz9dB
+ 16: YScl0+e7nGBCr0b7p4dtLkOnMURufIQS+rpAxDgXn5pE4VYjN1hMosel07FXCdxE
+ 17: pfcZsy63GrKFb6BJFySLj8Sqsj20begysGJLtsael1fg/M6d7NAgMLPLkDwHEfPQ
+ 18: We19LOPISwhXBmRNwaSB1AehP2fnfFtpyAgiAI0CgYBd+S6qL7tWRu+ezeVQhDgQ
+ 19: 0z5/mCI4SMEK4TRf+DfMrZQ6yoJT4+KocL/ZUswBEyAiqtKKpvlJL3pagjsRstU7
+ 20: Es62kLhC8IYp+NLPxMfczxuaz8Y3AMcMZdb1hLM47Gu3knIABZ4Ksu5Ln1VOZEAd
+ 21: EgOiEwlDymWc1+2aURKWpwKBgQCaw94iWwVXCurwIdnmLQQ9lqGdXrFEBYIEZFDB
+ 22: tSl/M4mbxkNeTEcC8lR2rhX0UczPQd84eoz/mVytm5uzKHbkrcjisH6vJTWS1eHQ
+ 23: 6BEbNEFpzv1xIuYELmKaAXgmmhxlqNlP7YFViPRfswEieFRSSo6GdXwD+/oq5uMZ
+ 24: Gb1ADQKBgQCF5+TonigQOViYiIWY2A885UuExdtKd2K7ogboIhfTgHTANGvNTURS
+ 25: ymTJ6ntQbBbe6uXZ51d8uJrBLGwUIL5dT2kCfvx+Jo1UTlVsOdYFFTaN5bVvIgv7
+ 26: O77Dxm8JVZBpqjqf9UWW5EARBe6P7Q9kMeXNO3v2Rzlv+7n+tv/YvQ==
+ 27: -----END RSA PRIVATE KEY-----
+ 28: 
+ 29: -----BEGIN PUBLIC KEY-----
+ 30: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/4+4xh0g5Jd9IEwcCeZ
+ 31: HyyBZVkAxbzYBhGSXs6e/Sp30w7e0AL1shpA3xNVHCPC+rLgCZP2CVdRGULQnimu
+ 32: Z9cmVmDtXaWHoKqbRWYK3RgJqhH/lgqFV6uU5x9rTXtCKm09mTPtDfL1gx1SEna/
+ 33: aAIOJAQirY1QleCcK8UeF/fRYd4yuenuGMPzwWnxfZw50XUwMo95wi1n0HcMKQOW
+ 34: u8IJES4rtiV3OcGlbTZDXUpVu1GaSq+O72AT8dXjIXfh8QgAzh5B2cc9wbxXb6Md
+ 35: 0rV4eSoWxO1W63Wc0C2Xa5U4HQDNrNayC0IQvxeCkEPitbh0ErWNldsDmRJsK9cZ
+ 36: dwIDAQAB
+ 37: -----END PUBLIC KEY-----
+ 38: 
+----------------------------------------
+
+
+============================================================
+Test Execution #40
+Timestamp: 2025-06-06 17:09:09
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 1 b
+  3: 6 -----BEGIN RSA PRIVATE KEY-----
+  4: MIIEpAIBAAKCAQEAr/4+4xh0g5Jd9IEwcCeZHyyBZVkAxbzYBhGSXs6e/Sp30w7e
+  5: 0AL1shpA3xNVHCPC+rLgCZP2CVdRGULQnimuZ9cmVmDtXaWHoKqbRWYK3RgJqhH/
+  6: lgqFV6uU5x9rTXtCKm09mTPtDfL1gx1SEna/aAIOJAQirY1QleCcK8UeF/fRYd4y
+  7: uenuGMPzwWnxfZw50XUwMo95wi1n0HcMKQOWu8IJES4rtiV3OcGlbTZDXUpVu1Ga
+  8: Sq+O72AT8dXjIXfh8QgAzh5B2cc9wbxXb6Md0rV4eSoWxO1W63Wc0C2Xa5U4HQDN
+  9: rNayC0IQvxeCkEPitbh0ErWNldsDmRJsK9cZdwIDAQABAoIBAAx0kRfPuG3tXcKQ
+ 10: TWYf707M/rVg/f8rP8X3grqR+J+Qh11uYnzUkMs+NL7KO/jwsPu+zWtFckwJRsnj
+ 11: uCb8FTCagfHqtzHW+rPMueNzTCvcknvbp+aDBRqGH/+Bcj3QDjKO0Pq25D0wp4kp
+ 12: eeWo9h/oG/8W3ytq4mamYvcYDWqttwdCBcV6och7ZARbnBiNNtT/JBJSru0ZBM4y
+ 13: jFQbFwgyd5FhEG5NGJSeWRXUKwEqCB/g0/nDbErFYcTOBiz8H6GmJzgK105X+YGw
+ 14: 16c15aWQCCAU6B3jF2nJGeYqOZWSQjCnoGnX05/ICQ+W9lUqNRenPLCTZ/Z/tydR
+ 15: Jkk0JvUCgYEA2MXXpRYwVTmDgd2Gyw79Z8TP9DzkVQz/CFZHW0FxHjmV/BP6QT0W
+ 16: d2KRysVvIGKfcxnYIeS7vwXA7Pvg29bwJkcAZlrxPyBUuNor7Ef5KpDXC86qz9RM
+ 17: kIm2TjoWxoAL253e6tSmjf9qDPjPFDmL1Ey9lW3AiW0xqybwVTE3CxMCgYEAz9dB
+ 18: YScl0+e7nGBCr0b7p4dtLkOnMURufIQS+rpAxDgXn5pE4VYjN1hMosel07FXCdxE
+ 19: pfcZsy63GrKFb6BJFySLj8Sqsj20begysGJLtsael1fg/M6d7NAgMLPLkDwHEfPQ
+ 20: We19LOPISwhXBmRNwaSB1AehP2fnfFtpyAgiAI0CgYBd+S6qL7tWRu+ezeVQhDgQ
+ 21: 0z5/mCI4SMEK4TRf+DfMrZQ6yoJT4+KocL/ZUswBEyAiqtKKpvlJL3pagjsRstU7
+ 22: Es62kLhC8IYp+NLPxMfczxuaz8Y3AMcMZdb1hLM47Gu3knIABZ4Ksu5Ln1VOZEAd
+ 23: EgOiEwlDymWc1+2aURKWpwKBgQCaw94iWwVXCurwIdnmLQQ9lqGdXrFEBYIEZFDB
+ 24: tSl/M4mbxkNeTEcC8lR2rhX0UczPQd84eoz/mVytm5uzKHbkrcjisH6vJTWS1eHQ
+ 25: 6BEbNEFpzv1xIuYELmKaAXgmmhxlqNlP7YFViPRfswEieFRSSo6GdXwD+/oq5uMZ
+ 26: Gb1ADQKBgQCF5+TonigQOViYiIWY2A885UuExdtKd2K7ogboIhfTgHTANGvNTURS
+ 27: ymTJ6ntQbBbe6uXZ51d8uJrBLGwUIL5dT2kCfvx+Jo1UTlVsOdYFFTaN5bVvIgv7
+ 28: O77Dxm8JVZBpqjqf9UWW5EARBe6P7Q9kMeXNO3v2Rzlv+7n+tv/YvQ==
+ 29: -----END RSA PRIVATE KEY-----
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: makwXsbuhRbEBwO3JkkIdJluoD38Iu5964Xv6cHKH4Lxh2YSLvqB8kUvtO7zwtzIQIKX2suGUC+vt3nmaEWwDR43qMHx1ULPiJIhWAPeKARdWZ1Xns8EY+tlB1p4uNpD22+5si09i1JmsPdp4wjiPg4VKDsdFwp9NWKCnlHdaPvoMTdqeNInZIMMcB2EZG7vZNj0WgJbW8xk3NJ//bPx1KeL7FHRxGOSP0WxXdMKSPir+cVz7u3ej8tpF05KVdsYuvQ7qB+PTAXu4zwlLSrNMwzm+zLRQVK6evhG/jh9jjYzZj86ZVVGL2F66DiUWoSO4eywUXt2zsbBkQUWjKt8Iw==
+----------------------------------------
+
+
+============================================================
+Test Execution #41
+Timestamp: 2025-06-06 17:09:10
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 1 b
+  3: 1 c
+  4: 7 -----BEGIN PUBLIC KEY-----
+  5: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/4+4xh0g5Jd9IEwcCeZ
+  6: HyyBZVkAxbzYBhGSXs6e/Sp30w7e0AL1shpA3xNVHCPC+rLgCZP2CVdRGULQnimu
+  7: Z9cmVmDtXaWHoKqbRWYK3RgJqhH/lgqFV6uU5x9rTXtCKm09mTPtDfL1gx1SEna/
+  8: aAIOJAQirY1QleCcK8UeF/fRYd4yuenuGMPzwWnxfZw50XUwMo95wi1n0HcMKQOW
+  9: u8IJES4rtiV3OcGlbTZDXUpVu1GaSq+O72AT8dXjIXfh8QgAzh5B2cc9wbxXb6Md
+ 10: 0rV4eSoWxO1W63Wc0C2Xa5U4HQDNrNayC0IQvxeCkEPitbh0ErWNldsDmRJsK9cZ
+ 11: dwIDAQAB
+ 12: -----END PUBLIC KEY-----
+ 13: 
+ 14: makwXsbuhRbEBwO3JkkIdJluoD38Iu5964Xv6cHKH4Lxh2YSLvqB8kUvtO7zwtzIQIKX2suGUC+vt3nmaEWwDR43qMHx1ULPiJIhWAPeKARdWZ1Xns8EY+tlB1p4uNpD22+5si09i1JmsPdp4wjiPg4VKDsdFwp9NWKCnlHdaPvoMTdqeNInZIMMcB2EZG7vZNj0WgJbW8xk3NJ//bPx1KeL7FHRxGOSP0WxXdMKSPir+cVz7u3ej8tpF05KVdsYuvQ7qB+PTAXu4zwlLSrNMwzm+zLRQVK6evhG/jh9jjYzZj86ZVVGL2F66DiUWoSO4eywUXt2zsbBkQUWjKt8Iw== 62af5c3cb8da3e4f25061e829ebeea5c7513c54949115b1acc225930a90154da
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #42
+Timestamp: 2025-06-06 17:09:10
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 1 b
+  3: 1 c
+  4: 7 -----BEGIN PUBLIC KEY-----
+  5: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/4+4xh0g5Jd9IEwcCeZ
+  6: HyyBZVkAxbzYBhGSXs6e/Sp30w7e0AL1shpA3xNVHCPC+rLgCZP2CVdRGULQnimu
+  7: Z9cmVmDtXaWHoKqbRWYK3RgJqhH/lgqFV6uU5x9rTXtCKm09mTPtDfL1gx1SEna/
+  8: aAIOJAQirY1QleCcK8UeF/fRYd4yuenuGMPzwWnxfZw50XUwMo95wi1n0HcMKQOW
+  9: u8IJES4rtiV3OcGlbTZDXUpVu1GaSq+O72AT8dXjIXfh8QgAzh5B2cc9wbxXb6Md
+ 10: 0rV4eSoWxO1W63Wc0C2Xa5U4HQDNrNayC0IQvxeCkEPitbh0ErWNldsDmRJsK9cZ
+ 11: dwIDAQAB
+ 12: -----END PUBLIC KEY-----
+ 13: 
+ 14: makwXsbuhRbEBwO3JkkIdJluoD38Iu5964Xv6cHKH4Lxh2YSLvqB8kUvtO7zwtzIQIKX2suGUC+vt3nmaEWwDR43qMHx1ULPiJIhWAPeKARdWZ1Xns8EY+tlB1p4uNpD22+5si09i1JmsPdp4wjiPg4VKDsdFwp9NWKCnlHdaPvoMTdqeNInZIMMcB2EZG7vZNj0WgJbW8xk3NJ//bPx1KeL7FHRxGOSP0WxXdMKSPir+cVz7u3ej8tpF05KVdsYuvQ7qB+PTAXu4zwlLSrNMwzm+zLRQVK6evhG/jh9jjYzZj86ZVVGL2F66DiUWoSO4eywUXt2zsbBkQUWjKt8Iw== d71dc32fa2cd95be60b32dbb3e63009fa8064407ee19f457c92a09a5ff841a8a
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: False
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_signature_wrong_public_key
+############################################################
+
+============================================================
+Test Execution #43
+Timestamp: 2025-06-06 17:09:10
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 5
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: -----BEGIN RSA PRIVATE KEY-----
+  2: MIIEpAIBAAKCAQEAnUPszZKqtVNkG5Zf9T4o4BUvK6CJkRl35DgmYP3kQ/niJaEd
+  3: rH+5chb5T4iifOWHDRLwuU5A42bxBnbN6ApqPk5+pkSAnjZEJwSt943E3QZ0KPCn
+  4: OzCczk0p/lb3E+Zu/litXq99z91e+cjkTUxZUEVqHOn0G0CpZyK7iIsWbFEhL+Z1
+  5: ixbnZcMttL2UGUtwSp0lPSV0ZMd4MD7wACQh+atgIxBZZd6iqOmBo6uhcgcDf7xR
+  6: zrjQ8fxb17YeliLDjS/2/fHEkRCJK0wSxtmhm+kpCjUYUwhBq4TSfl02q0R/HALf
+  7: LDepP6jZGJ0LQu2LVrbTbXN78Kcx3D71qhq6dwIDAQABAoIBAC1KdJY3mQYjf/8Z
+  8: 7YS5ZBg0waL01ul8xjRpn1PriqOxAVoI7nzRQ90BlMc8+F6z05MGU2FqkfFrohpU
+  9: eLRM25AaFwtXSxtFUZdTF67lmz50L1vjAqZfN6mKO3/OF9YZVPnXHAbaz4bfoAyb
+ 10: uHQyer5NX2P4VJ7MnnzfWdbXB5wlxa1Gg21mfHNrZaDlfWde2mUuVQVBclUnrhz3
+ 11: hOfntSgm1i2xHz8gXOEBrlmols2dQn2Yhp8qk2kYVehHmHjXUQig/oSTzEh3A1t/
+ 12: fLQNNs1eGvX6d0RZPhPByVSlEoMdXcJbfBUIEMPARJ93gcnax1B6ymHnyNkZiDT9
+ 13: lZLtOYECgYEAy7sMzxlqz6yMj7mEcPhfRpWnizJtaRQn4qNV2ZOh3vMelHsYID5H
+ 14: 6V4UYZx7/d1vslJ4dwOJDdSipUDlMAhtLYjIzwRKdsUjr1H0ebE/OAJul61TAURi
+ 15: MVkZeYYyHyL79lPwJpquYyI3TCNjHE/LzKGqhOkVy2+8/kw/N+HdJRcCgYEAxZ0M
+ 16: 217Y2swDvUFODFtuush0OqQQIcuXUf6o/NLTFi+l200oMtuVXgt0pGQVkDxmRQMf
+ 17: ZIXjJZ5DPP8SrZrecP09sKzhC9HLUvcd0G4lztShi5Vlo/H337JDBYwWfJQxoIWK
+ 18: SsAVqQYEyta7xktsYiHF0YFTUQ7P+o+fPfObMaECgYEAx127UisYWDQNtVQhY//a
+ 19: FJO8yj3Fza94vJOEHpAXNrsJcNnoqRzpeFilb0QYHj0E4idMVYLzKsKrizWvUkrc
+ 20: tFOH1vXm/MU8f4OezzuBlwjiOrHVaYcG5C3B/Scygz/T+6D2gICcKMzB+lMi2QDJ
+ 21: ee22lawWtOcatmvc7Y2swG8CgYEAikHi6OhnGE18oEC8dnDR++SbTRvUHZDvgfKG
+ 22: ELz/6pnTlKda5Jo02uNw7EMJwyw+8THKGO6DiaI8sMRVMRkVYEANlTqfCUHy200B
+ 23: kv49fYPOsnYH8rgsEFoMAimM4gRc5E4J/1p8zRDk8XVjUs0aO14dpQKyZBfU8xzg
+ 24: 8NsrTYECgYAlfz1bvkx/rc3XGyBVF7TRNEQXiwCLocLGUILDRB5avSkKzq2R/oVG
+ 25: Lma0IcqVhIuhaWyBT1pCzAlIO7I1K39ajyUfOa4MStS0ahSzrQpf1gA98QZCaNkt
+ 26: kL7jIpYU++9+jqbJPWxKlJS/vuDSX2+cNIa5o1sJdswd/s4hoJfDHg==
+ 27: -----END RSA PRIVATE KEY-----
+ 28: 
+ 29: -----BEGIN PUBLIC KEY-----
+ 30: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnUPszZKqtVNkG5Zf9T4o
+ 31: 4BUvK6CJkRl35DgmYP3kQ/niJaEdrH+5chb5T4iifOWHDRLwuU5A42bxBnbN6Apq
+ 32: Pk5+pkSAnjZEJwSt943E3QZ0KPCnOzCczk0p/lb3E+Zu/litXq99z91e+cjkTUxZ
+ 33: UEVqHOn0G0CpZyK7iIsWbFEhL+Z1ixbnZcMttL2UGUtwSp0lPSV0ZMd4MD7wACQh
+ 34: +atgIxBZZd6iqOmBo6uhcgcDf7xRzrjQ8fxb17YeliLDjS/2/fHEkRCJK0wSxtmh
+ 35: m+kpCjUYUwhBq4TSfl02q0R/HALfLDepP6jZGJ0LQu2LVrbTbXN78Kcx3D71qhq6
+ 36: dwIDAQAB
+ 37: -----END PUBLIC KEY-----
+ 38: 
+----------------------------------------
+
+
+============================================================
+Test Execution #44
+Timestamp: 2025-06-06 17:09:11
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 5
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: -----BEGIN RSA PRIVATE KEY-----
+  2: MIIEowIBAAKCAQEAuj7ajqHtpqfbLtcqUv0b3oOsZq3PVdmgo+GYZu2JEzH42xBl
+  3: 0d/PSCXQPRBjQgt2s3CmEWMu/Pu2enYB/fjlfZS7jzbwCge/SMA/lACPeotOmahX
+  4: SDb0sdJXYnXq7qXkz2HhuwH2XNysyBYpNT5yh58ydXKGLyXJsPPHZDaAuokeVkaz
+  5: u3tNce0qP7GpDIFlkOhMT8vvuJcW3umaaGsYdJnulDvDO1Oot11KECnS8ANvsOiE
+  6: WJsDiyaspc+nS9ZAKdsQmBcAOYQxr9JTCUADKndSLUba7xFjk8A94ZQ7FQZ5nSfP
+  7: JfgGonB/o1Vc1xJmiE57eiGgjKOvMEr9U+WBSwIDAQABAoIBAAGzDR98DsUUhwV4
+  8: ZSR4tsZjATG2qEuqPrMAHfnidPu92v10utkdZ7DK14mXGrDBlgWxI3LJKuaYDWQ0
+  9: q3P7z2xD7SozYCFXTMGHL41UK/r8Rm1UgedgyP7OYom9dbVTwjC6PesM64iRYuo4
+ 10: eYvI1Ba0tysnLl5DxAFfWBRsAuSw05mkq2OLYuYMZBh9bk6VXI/l8NjNFAZ9fzcu
+ 11: h/YUk2wDgCKcpDUkCTeaKSMHvHFr7/MiSM1bEGF/GdzOHhMLmFgZKIKlznhyCnbg
+ 12: zeNeRzp/6dopcSGF0XhlfjFb9/qJn34A8evXjcJgusvauN05GBcwH9Y6Fw7aE/5i
+ 13: FvWl2/ECgYEA8/DsuL2XYEgBSimzFmb78UZnju70dDdU8Eor8C5OivMYarLOYlgV
+ 14: fwD9eTGaBF9c0xNMN8W9qMQMT/Q69HH7kd/TsBLeBKTlfbzLX6x4WfQr8eXgD2Bw
+ 15: xO0I2iRtB4cudmyRnuVhkTa/7i3HWPE6jctTEa+6JJ69zoktqRTGZKcCgYEAw3PK
+ 16: jioUihaIfvWpeBk/nNlFWAfUj2HIsrSHPF+NyFSW2yne5ovOtJHTFbXyfnGqTj55
+ 17: OQkTaDyfWHPxpYKqI7fVdSboBb8128v0pITzEjCrHlH6XLIuUlvQ0q2sMZ/+hzPT
+ 18: AomWoR2RPii0PG3+qz1Rcw7uNizE+v9EI45lfr0CgYAWpkcEfC4C9YyRG0ASk2tP
+ 19: Iq9Y2Rz/cWfEi856lYIbaqjYt1NsVCtiyG/Agfd/8m7G9mK8RvLuKY3PGqkiqzal
+ 20: e7fHAGl22uyn+RCVCImAKKiv5B0isFyoHC4XOwyYh1esDTaUH04o0oGNltiMjJFY
+ 21: OwmyebN51PdgpuIDcfddvwKBgQCf7Uorg2ElEIUFpYvSmo5DkEC+ZEHYRMHNAAy8
+ 22: KM/BwP1jPWKHMJSlicC3vhY6wlUBCvtz4OpBW4FjBhQPQthmu5Bs+LXXpfqy67M1
+ 23: PxgJpUsPVzLN0Ho4p6o6CSOhw3GoPY6GQADBuojS3MmFvNcqVNUlmWzvZTiUzHR7
+ 24: x5Ni3QKBgEvy4Va9sgGB65UT7LvwsHX0zlFV1QMd+MHgZuSyxFVbW3HpZhUkdtcs
+ 25: U05HdgYW+Eo7wl0Tvnyxz+Oi0WJHyw4yFOpydSFWEk1C9Teyd+rtrrWaWiIj/BYG
+ 26: Noanpe7J6fFHlUoscVufsEgLCPfO0TfMA5bxHTJCreULSrP2PaV8
+ 27: -----END RSA PRIVATE KEY-----
+ 28: 
+ 29: -----BEGIN PUBLIC KEY-----
+ 30: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuj7ajqHtpqfbLtcqUv0b
+ 31: 3oOsZq3PVdmgo+GYZu2JEzH42xBl0d/PSCXQPRBjQgt2s3CmEWMu/Pu2enYB/fjl
+ 32: fZS7jzbwCge/SMA/lACPeotOmahXSDb0sdJXYnXq7qXkz2HhuwH2XNysyBYpNT5y
+ 33: h58ydXKGLyXJsPPHZDaAuokeVkazu3tNce0qP7GpDIFlkOhMT8vvuJcW3umaaGsY
+ 34: dJnulDvDO1Oot11KECnS8ANvsOiEWJsDiyaspc+nS9ZAKdsQmBcAOYQxr9JTCUAD
+ 35: KndSLUba7xFjk8A94ZQ7FQZ5nSfPJfgGonB/o1Vc1xJmiE57eiGgjKOvMEr9U+WB
+ 36: SwIDAQAB
+ 37: -----END PUBLIC KEY-----
+ 38: 
+----------------------------------------
+
+
+============================================================
+Test Execution #45
+Timestamp: 2025-06-06 17:09:11
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 sigA
+  2: 1 sigB
+  3: 6 -----BEGIN RSA PRIVATE KEY-----
+  4: MIIEpAIBAAKCAQEAnUPszZKqtVNkG5Zf9T4o4BUvK6CJkRl35DgmYP3kQ/niJaEd
+  5: rH+5chb5T4iifOWHDRLwuU5A42bxBnbN6ApqPk5+pkSAnjZEJwSt943E3QZ0KPCn
+  6: OzCczk0p/lb3E+Zu/litXq99z91e+cjkTUxZUEVqHOn0G0CpZyK7iIsWbFEhL+Z1
+  7: ixbnZcMttL2UGUtwSp0lPSV0ZMd4MD7wACQh+atgIxBZZd6iqOmBo6uhcgcDf7xR
+  8: zrjQ8fxb17YeliLDjS/2/fHEkRCJK0wSxtmhm+kpCjUYUwhBq4TSfl02q0R/HALf
+  9: LDepP6jZGJ0LQu2LVrbTbXN78Kcx3D71qhq6dwIDAQABAoIBAC1KdJY3mQYjf/8Z
+ 10: 7YS5ZBg0waL01ul8xjRpn1PriqOxAVoI7nzRQ90BlMc8+F6z05MGU2FqkfFrohpU
+ 11: eLRM25AaFwtXSxtFUZdTF67lmz50L1vjAqZfN6mKO3/OF9YZVPnXHAbaz4bfoAyb
+ 12: uHQyer5NX2P4VJ7MnnzfWdbXB5wlxa1Gg21mfHNrZaDlfWde2mUuVQVBclUnrhz3
+ 13: hOfntSgm1i2xHz8gXOEBrlmols2dQn2Yhp8qk2kYVehHmHjXUQig/oSTzEh3A1t/
+ 14: fLQNNs1eGvX6d0RZPhPByVSlEoMdXcJbfBUIEMPARJ93gcnax1B6ymHnyNkZiDT9
+ 15: lZLtOYECgYEAy7sMzxlqz6yMj7mEcPhfRpWnizJtaRQn4qNV2ZOh3vMelHsYID5H
+ 16: 6V4UYZx7/d1vslJ4dwOJDdSipUDlMAhtLYjIzwRKdsUjr1H0ebE/OAJul61TAURi
+ 17: MVkZeYYyHyL79lPwJpquYyI3TCNjHE/LzKGqhOkVy2+8/kw/N+HdJRcCgYEAxZ0M
+ 18: 217Y2swDvUFODFtuush0OqQQIcuXUf6o/NLTFi+l200oMtuVXgt0pGQVkDxmRQMf
+ 19: ZIXjJZ5DPP8SrZrecP09sKzhC9HLUvcd0G4lztShi5Vlo/H337JDBYwWfJQxoIWK
+ 20: SsAVqQYEyta7xktsYiHF0YFTUQ7P+o+fPfObMaECgYEAx127UisYWDQNtVQhY//a
+ 21: FJO8yj3Fza94vJOEHpAXNrsJcNnoqRzpeFilb0QYHj0E4idMVYLzKsKrizWvUkrc
+ 22: tFOH1vXm/MU8f4OezzuBlwjiOrHVaYcG5C3B/Scygz/T+6D2gICcKMzB+lMi2QDJ
+ 23: ee22lawWtOcatmvc7Y2swG8CgYEAikHi6OhnGE18oEC8dnDR++SbTRvUHZDvgfKG
+ 24: ELz/6pnTlKda5Jo02uNw7EMJwyw+8THKGO6DiaI8sMRVMRkVYEANlTqfCUHy200B
+ 25: kv49fYPOsnYH8rgsEFoMAimM4gRc5E4J/1p8zRDk8XVjUs0aO14dpQKyZBfU8xzg
+ 26: 8NsrTYECgYAlfz1bvkx/rc3XGyBVF7TRNEQXiwCLocLGUILDRB5avSkKzq2R/oVG
+ 27: Lma0IcqVhIuhaWyBT1pCzAlIO7I1K39ajyUfOa4MStS0ahSzrQpf1gA98QZCaNkt
+ 28: kL7jIpYU++9+jqbJPWxKlJS/vuDSX2+cNIa5o1sJdswd/s4hoJfDHg==
+ 29: -----END RSA PRIVATE KEY-----
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: d0+qVHH8Pzgyk/tv2W7SwD9/pwhCKy/14OStbilrRwLu1ZluQXfoaDRWWTf9X81z0t/+5AgVucXZOjsY7C2QcHWGrL9JkMnuxK2IfyoTvbvVy7VkTmRMLqzQlg/rHu2kYTQoLH/adFlAsJON/cCaNOl/UN8IsZ4TXnA1aUVY+jqXynwoG5LqnHL8+ytdW+3xXozk7ElpOg2yKuPoXZQTcNEokt/fievk7hfdZlgLAGRJuqHaNMswxRd2tSot1mwHl6swK+4RlGVUZO5Z5/8AtupeYgtCtJeTsJIyreUFW0LickDVuleTMPwTIJrGbMWj7tq8MswWJ/A1LQDkkE6JmQ==
+----------------------------------------
+
+
+============================================================
+Test Execution #46
+Timestamp: 2025-06-06 17:09:12
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 sigA
+  2: 1 sigB
+  3: 7 -----BEGIN PUBLIC KEY-----
+  4: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuj7ajqHtpqfbLtcqUv0b
+  5: 3oOsZq3PVdmgo+GYZu2JEzH42xBl0d/PSCXQPRBjQgt2s3CmEWMu/Pu2enYB/fjl
+  6: fZS7jzbwCge/SMA/lACPeotOmahXSDb0sdJXYnXq7qXkz2HhuwH2XNysyBYpNT5y
+  7: h58ydXKGLyXJsPPHZDaAuokeVkazu3tNce0qP7GpDIFlkOhMT8vvuJcW3umaaGsY
+  8: dJnulDvDO1Oot11KECnS8ANvsOiEWJsDiyaspc+nS9ZAKdsQmBcAOYQxr9JTCUAD
+  9: KndSLUba7xFjk8A94ZQ7FQZ5nSfPJfgGonB/o1Vc1xJmiE57eiGgjKOvMEr9U+WB
+ 10: SwIDAQAB
+ 11: -----END PUBLIC KEY-----
+ 12: 
+ 13: d0+qVHH8Pzgyk/tv2W7SwD9/pwhCKy/14OStbilrRwLu1ZluQXfoaDRWWTf9X81z0t/+5AgVucXZOjsY7C2QcHWGrL9JkMnuxK2IfyoTvbvVy7VkTmRMLqzQlg/rHu2kYTQoLH/adFlAsJON/cCaNOl/UN8IsZ4TXnA1aUVY+jqXynwoG5LqnHL8+ytdW+3xXozk7ElpOg2yKuPoXZQTcNEokt/fievk7hfdZlgLAGRJuqHaNMswxRd2tSot1mwHl6swK+4RlGVUZO5Z5/8AtupeYgtCtJeTsJIyreUFW0LickDVuleTMPwTIJrGbMWj7tq8MswWJ/A1LQDkkE6JmQ== a2c1fa55ff662335c18aba2c488379fd3c498bd67d13aa0c5a0ddb909a9c9d88
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: False
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_single_leaf_proof_and_verify
+############################################################
+
+============================================================
+Test Execution #47
+Timestamp: 2025-06-06 17:09:12
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 single
+  2: 3 0
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 947f187506f7629c81c81879a2cb2256455038e4ac770091d897fa0a8b945e3b
+----------------------------------------
+
+
+============================================================
+Test Execution #48
+Timestamp: 2025-06-06 17:09:12
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 single
+  2: 4 single 947f187506f7629c81c81879a2cb2256455038e4ac770091d897fa0a8b945e3b
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #49
+Timestamp: 2025-06-06 17:09:13
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 single
+  2: 4 wrong 947f187506f7629c81c81879a2cb2256455038e4ac770091d897fa0a8b945e3b
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: False
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_single_leaf_root
+############################################################
+
+============================================================
+Test Execution #50
+Timestamp: 2025-06-06 17:09:13
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 a
+  2: 2
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_various_proof_positions
+############################################################
+
+============================================================
+Test Execution #51
+Timestamp: 2025-06-06 17:09:13
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 3 0
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 12804bad6fe94a55f18b2b37e300919a5fd517b95aa81e95db574c0ba069a3740 1a31604b0c503032b366019c0c945400c40368bc5914210b064d6a4d60f1af11e 127fa20b54d40ce93fe226f04266475a9662a0d5ae9c9217f3e759ee5b01dd74c
+----------------------------------------
+
+
+============================================================
+Test Execution #52
+Timestamp: 2025-06-06 17:09:13
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 4 l0 b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 12804bad6fe94a55f18b2b37e300919a5fd517b95aa81e95db574c0ba069a3740 1a31604b0c503032b366019c0c945400c40368bc5914210b064d6a4d60f1af11e 127fa20b54d40ce93fe226f04266475a9662a0d5ae9c9217f3e759ee5b01dd74c
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #53
+Timestamp: 2025-06-06 17:09:14
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 3 4
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 1a99e27f8d40e114ff48dc9c44b04cd7418328c15b7a5ed0ceeaa180783c45fa0 1a7c4c38f492be8f9947dcb7cc3d10c77689de40c8b28f27d734178c87d71dfbd 0dd3bacc3456f8cdd162031d90dc1c4e295e9b78acc6f688b6ece84ddb0d2dae9
+----------------------------------------
+
+
+============================================================
+Test Execution #54
+Timestamp: 2025-06-06 17:09:14
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 4 l4 b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 1a99e27f8d40e114ff48dc9c44b04cd7418328c15b7a5ed0ceeaa180783c45fa0 1a7c4c38f492be8f9947dcb7cc3d10c77689de40c8b28f27d734178c87d71dfbd 0dd3bacc3456f8cdd162031d90dc1c4e295e9b78acc6f688b6ece84ddb0d2dae9
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+============================================================
+Test Execution #55
+Timestamp: 2025-06-06 17:09:15
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 3 7
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 0d96385441b6cc2e31c01acd2fea731503e91bf4424d094cfc3d873e6dde11182 09a107638334a5915c2ac31222677d6ca115d02fb73419e010c63e5e6522358e2 0dd3bacc3456f8cdd162031d90dc1c4e295e9b78acc6f688b6ece84ddb0d2dae9
+----------------------------------------
+
+
+============================================================
+Test Execution #56
+Timestamp: 2025-06-06 17:09:15
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 l0
+  2: 1 l1
+  3: 1 l2
+  4: 1 l3
+  5: 1 l4
+  6: 1 l5
+  7: 1 l6
+  8: 1 l7
+  9: 4 l7 b2f7f5610587de9ad6c06716dbc443d5f42babeb2415850cffba0d09a2ad5b79 0d96385441b6cc2e31c01acd2fea731503e91bf4424d094cfc3d873e6dde11182 09a107638334a5915c2ac31222677d6ca115d02fb73419e010c63e5e6522358e2 0dd3bacc3456f8cdd162031d90dc1c4e295e9b78acc6f688b6ece84ddb0d2dae9
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: True
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_verify_invalid_base64_signature
+############################################################
+
+============================================================
+Test Execution #57
+Timestamp: 2025-06-06 17:09:15
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 5
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: -----BEGIN RSA PRIVATE KEY-----
+  2: MIIEpAIBAAKCAQEArgpG+Ci03iIUiIQGq44J63NUYUHy5vHnNWa9fizeQrvxMU9x
+  3: LuXgIg5b3RRP+itMiwdEDxoGzs5LNk8BwBDDn/PqtCz24970DcdQK78UK1Q67KLL
+  4: 73mO3NKKfZ3l0ovyOXBSupk2qj7D/4OTPPVcxx3aEwDPrnw3QZH9mfs0XklrE6C2
+  5: ggPgCk8xeyp7NqwwrPoP6htr6u50lbnFYkmqheaCfGVyZU4Ot5QnclrZCWEf1LDE
+  6: r6Ivc0/Uy4R432m8/yCxUR1InHb6B3UcsvzXA+qyy0UYC4mNWDG80X0rDdUzYq6Y
+  7: Z0HyTeg7/9lo4eEyWr9IIwLA07bzCt116We53wIDAQABAoIBADruiPR72C7FjH1j
+  8: c1zA9nPvM/nQ2n7AF8HZ3b1tVP9042mGlHVEap4tjYaxW5mC8uK63Z1de0Oo0Af+
+  9: PcH7CzrM3cMP3LPxaWOHA4skoyA+38sEHxkiaLE2a6W4gztFnwo7EhBUVBHWugh5
+ 10: 1bAVB0r3PUIlCq3zKsS9uglbafKoy0toz1sT12y3biugETcl58chP5Ji7rPRk+PR
+ 11: cBTj8lO3h2xfgXNKpk1XmOQpgdBcUxs/b+jJv7He/MZ7Cj1bm0pUVBTfoICtb1nU
+ 12: r6KtMM+7/MXbeUBtI6vDpl9WFAR1oDNms5CAEgm5k3ibTfV/BCV6Ny7HFdrbndZ9
+ 13: 12AerXUCgYEA43cNYD1zSOMJBwFFF76/E5tyIprKccs2SLIx0wABLC4XCf2TDCkB
+ 14: dP/z5FaESOickw/SjqoxO2lOAunB+Rxv+JDFTwIQazYK9nH6lLIQ5L+KBRuUvS+J
+ 15: ZzriAiHgEaU/0SY3o60qGDzp+dB3YQ/v2+hiaZNPA74R+rE6jfMj2WsCgYEAw9+B
+ 16: gslOgzOJ2UA7Gjxb5OTOSExOLbWzaROgW6g+G9F/wXMqZcm5GFAZCnPkqQM3gwI+
+ 17: mQsRpjRk01ANI89MPeq5gzrlAPkzRiwOlAgKlgJcF8RS6B5DquxX6ZRsi89ibXdT
+ 18: 9kmoD/EN+tJUrsVIRVywNYCI9jeMhHVxEoS+ul0CgYEAmspLafCnYTRO0luE3zHI
+ 19: 6djghLf9iA6XtES/Ly1TnvMGbqAGz0GgYjRDjmFpyAuzcUhVKwyaUCnLEqRsgc9e
+ 20: SzKJcsiez7aJI0hRE5tRb7kAfZVVVKDiykMBxh2zU462rOdq+ZE/khrxxjSc6Ipl
+ 21: 2ap8Pggmvw87QPQWOr746F0CgYBtRv3HTK4rzo4ikY4ntfMCwZBAj6myIMQmZFe7
+ 22: qyJzfK8M60aFIUTNxqohxcSVcoD+6zqnQaCoHGT/65JZHycHCDRVfX8TyvQLOzsq
+ 23: 5U2aoVhlvhcO/wt7iX4Gh9MDMUFVlxRVvIQx2KeW/s9V7iTC5dI9FyfSTe1sXOUn
+ 24: kr2h1QKBgQC1MurJe+HvuU/nJSiNfwJyd3Kmvgc7N0m2S8WJ5E3951FGdZ4DlFnb
+ 25: LJS7cCLuMhGemeCubx/RFvOJhXh4Q1QsOYi8c2fVKOlI3X8V3UedN2vmYwq+1B/9
+ 26: gZPNCkN51v3ib8WbgbB/Xs3pzT6lbanycehFhfPKFJeoYhm/x/YCWg==
+ 27: -----END RSA PRIVATE KEY-----
+ 28: 
+ 29: -----BEGIN PUBLIC KEY-----
+ 30: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArgpG+Ci03iIUiIQGq44J
+ 31: 63NUYUHy5vHnNWa9fizeQrvxMU9xLuXgIg5b3RRP+itMiwdEDxoGzs5LNk8BwBDD
+ 32: n/PqtCz24970DcdQK78UK1Q67KLL73mO3NKKfZ3l0ovyOXBSupk2qj7D/4OTPPVc
+ 33: xx3aEwDPrnw3QZH9mfs0XklrE6C2ggPgCk8xeyp7NqwwrPoP6htr6u50lbnFYkmq
+ 34: heaCfGVyZU4Ot5QnclrZCWEf1LDEr6Ivc0/Uy4R432m8/yCxUR1InHb6B3UcsvzX
+ 35: A+qyy0UYC4mNWDG80X0rDdUzYq6YZ0HyTeg7/9lo4eEyWr9IIwLA07bzCt116We5
+ 36: 3wIDAQAB
+ 37: -----END PUBLIC KEY-----
+ 38: 
+----------------------------------------
+
+
+============================================================
+Test Execution #58
+Timestamp: 2025-06-06 17:09:16
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 b64a
+  2: 1 b64b
+  3: 7 -----BEGIN PUBLIC KEY-----
+  4: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArgpG+Ci03iIUiIQGq44J
+  5: 63NUYUHy5vHnNWa9fizeQrvxMU9xLuXgIg5b3RRP+itMiwdEDxoGzs5LNk8BwBDD
+  6: n/PqtCz24970DcdQK78UK1Q67KLL73mO3NKKfZ3l0ovyOXBSupk2qj7D/4OTPPVc
+  7: xx3aEwDPrnw3QZH9mfs0XklrE6C2ggPgCk8xeyp7NqwwrPoP6htr6u50lbnFYkmq
+  8: heaCfGVyZU4Ot5QnclrZCWEf1LDEr6Ivc0/Uy4R432m8/yCxUR1InHb6B3UcsvzX
+  9: A+qyy0UYC4mNWDG80X0rDdUzYq6YZ0HyTeg7/9lo4eEyWr9IIwLA07bzCt116We5
+ 10: 3wIDAQAB
+ 11: -----END PUBLIC KEY-----
+ 12: 
+ 13: !!!not_base64!!! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_verify_invalid_key_prefix
+############################################################
+
+============================================================
+Test Execution #59
+Timestamp: 2025-06-06 17:09:16
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 test1
+  2: 1 test2
+  3: 7 -----BEGIN INVALID KEY-----
+  4: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+  5: -----END PUBLIC KEY-----
+  6: 
+  7: dGVzdA== aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+############################################################
+# Starting Test: test_verify_valid_markers_invalid_content
+############################################################
+
+============================================================
+Test Execution #60
+Timestamp: 2025-06-06 17:09:16
+============================================================
+
+INPUT TO merkle.py:
+----------------------------------------
+  1: 1 test1
+  2: 1 test2
+  3: 7 -----BEGIN PUBLIC KEY-----
+  4: This is not valid key data
+  5: Just some random text
+  6: -----END PUBLIC KEY-----
+  7: 
+  8: dGVzdA== aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+----------------------------------------
+
+OUTPUT FROM merkle.py:
+----------------------------------------
+  1: 
+----------------------------------------
+
+
+============================================================
+Test run completed at: 2025-06-06 17:09:17
+Tests run: 22
+Failures: 0
+Errors: 0
