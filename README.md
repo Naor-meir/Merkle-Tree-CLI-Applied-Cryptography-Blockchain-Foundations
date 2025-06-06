@@ -63,16 +63,28 @@ All cryptographic functions are implemented **in compliance with best practices*
 
 ## ✅ Testing and Validation
 
-Includes a **comprehensive unittest suite** (>150 tests) that covers:
+Includes a **comprehensive unittest suite** that covers:
 
-- Command validation & input structure
-- Proof construction and verification correctness
-- RSA signing and signature checks
-- Full E2E flow from tree creation to proof and signature validation
+- `test_merkle.py` — unit tests for command validation, proof generation, and RSA functionality
+- `test_merkle_cli.py` — full CLI simulation using subprocesses and input sequences
+
+Run both test files:
 
 ```bash
-$ python -m unittest test_merkle.py
+# Run core logic unit tests
+python -m unittest Merkle-Tree/test_merkle.py
+
+# Run CLI integration tests (output is saved to test_output.txt)
+python Merkle-Tree/test_merkle_cli.py
 ```
+
+The output of the CLI tests will be written to:
+
+```
+test_output.txt
+```
+
+This file includes detailed logs of the inputs, outputs, and any errors per test case, making it easy to debug and verify complex interactions.
 
 ---
 
@@ -80,9 +92,11 @@ $ python -m unittest test_merkle.py
 
 ```
 .
-├── merkle.py         # Core implementation: tree logic, RSA, CLI
-├── test_merkle.py    # Full coverage unit tests
-└── README.md         # You're here!
+├── README.md                 # Project documentation (outside the main folder)
+└── Merkle-Tree/
+    ├── merkle.py             # Core implementation: Merkle Tree, RSA, CLI
+    ├── test_merkle.py        # Unit tests for Merkle functions and logic
+    ├── test_merkle_cli.py    # End-to-end CLI and REPL flow tests
 ```
 
 ---
